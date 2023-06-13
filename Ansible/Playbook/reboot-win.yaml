@@ -1,6 +1,6 @@
 ---
 - name: Reboot Windows device
-  hosts: all
+  hosts: windows_hosts
   gather_facts: false
   tasks:
     - name: Restart Windows
