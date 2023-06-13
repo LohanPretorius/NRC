@@ -1,6 +1,9 @@
-- name: updates
-  hosts: jhbansiblewinserv
-  connection: winrm
+- hosts: jhbansibleWINserv
+
+  become: true
+  tasks:
+    - name: updates
+        connection: winrm
 
   tasks:
     win_updates:
