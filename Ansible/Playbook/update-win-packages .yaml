@@ -1,9 +1,16 @@
 ---
-- hosts: all
-
-  become: true
+- name: Install Windows Updates
+  hosts: windows_hosts
+  gather_facts: false
   tasks:
-    - name: update apt packages
-      apt:
-        upgrade: yes
-        update_cache: yes
+    - name: Check for Windows updates
+      win_updates:
+        category_names: SecurityUpdates,Updates
+        state: searched
+      register: windows_updates
+
+    - name: Install Windows updates
+      win_updates:
+        category_names: SecurityUpdates,Updates
+        state: installed
+      when: windows_updates.updates | length > 0
