@@ -2,13 +2,5 @@
 
   become: true
   tasks:
-    - name: updates
-        connection: winrm
-
-  tasks:
-    win_updates:
-      category_names:
-        - CriticalUpdates
-        - SecurityUpdates
-    reboot: yes
-    reboot_timeout: 900
+    - name: Reboot the machine with all defaults
+  ansible.windows.win_reboot:
