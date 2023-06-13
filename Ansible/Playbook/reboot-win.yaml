@@ -1,0 +1,12 @@
+name: Windows updates
+hosts: jhbansibleWINserv
+connection: winrm
+
+Tasks:
+  win_updates:
+    category_names:
+      - Application
+      - CriticalUpdates
+      - DefinitionUpdates
+      - SecurityUpdates
+      - Updates
