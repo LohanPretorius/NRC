@@ -5,5 +5,5 @@
   tasks:
     - name: Restart Windows
       win_reboot:
-        reboot_timeout: 300
+        reboot_timeout: 30
         reboot_msg: "Reboot initiated by Ansible"
