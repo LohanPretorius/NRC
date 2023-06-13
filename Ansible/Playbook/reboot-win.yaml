@@ -1,6 +1,9 @@
-- hosts: jhbansibleWINserv
-
-  become: true
+---
+- name: Reboot Windows device
+  hosts: jhbansibleWINserv
+  gather_facts: false
   tasks:
-    - name: Reboot the machine with all defaults
-  ansible.windows.win_reboot:
+    - name: Restart Windows
+      win_reboot:
+        reboot_timeout: 300
+        reboot_msg: "Reboot initiated by Ansible"
