@@ -1,3 +1,9 @@
-- name: Search and download Windows updates without installing them
+---
+- hosts: jhbansibleWINserv
+  tasks:
+  - name: Choose which Windows updates to install
   win_updates:
-    state: downloaded
+    category_names:
+      - SecurityUpdates
+      - CriticalUpdates
+      - UpdateRollups
