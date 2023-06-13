@@ -1,6 +1,6 @@
 ---
 - name: Reboot Windows device
-  hosts: jhbansibleWINserv
+  hosts: all
   gather_facts: false
   tasks:
     - name: Restart Windows
