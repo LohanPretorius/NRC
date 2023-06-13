@@ -1,9 +1,11 @@
 ---
-- name: Reboot Windows device
+- name: Reboot Windows Server
   hosts: windows_hosts
   gather_facts: false
+
   tasks:
-    - name: Restart Windows
+    - name: Reboot the server
       win_reboot:
-        reboot_timeout: 30
-        reboot_msg: "Reboot initiated by Ansible"
+        reboot_timeout: 600
+        msg: "Reboot initiated by Ansible"
+      become: true
