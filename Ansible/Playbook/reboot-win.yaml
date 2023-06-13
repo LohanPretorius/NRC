@@ -1,5 +1,5 @@
-- name: Run Updates on Directory Servers then wait 15 mins
-  hosts: all
+- name: updates
+  hosts: jhbansiblewinserv
   connection: winrm
 
   tasks:
