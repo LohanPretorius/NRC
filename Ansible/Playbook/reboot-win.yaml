@@ -1,12 +1,3 @@
-- name: Windows updates
-  hosts: jhbansibleWINserv
-  connection: winrm
-
-  Tasks:
-    win_updates:
-      category_names:
-        - Application
-        - CriticalUpdates
-        - DefinitionUpdates
-        - SecurityUpdates
-        - Updates
+- name: Search and download Windows updates without installing them
+  win_updates:
+    state: downloaded
